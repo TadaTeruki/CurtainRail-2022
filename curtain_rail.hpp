@@ -1,4 +1,7 @@
 
+#ifndef CURTAIN_RAIL_H
+#define CURTAIN_RAIL_H
+
 #include <initializer_list>
 #include <iostream>
 #include <list>
@@ -233,7 +236,13 @@ template <typename T, unsigned int DIM> class container {
     }
 };
 
+template <typename T, unsigned int DIM>
+using index = typename container<T, DIM>::value_src_iterator;
+template <typename T, unsigned int DIM>
+using range_pointer = typename container<T, DIM>::range_ptr_iterator;
+
+
 }; // namespace curtain_rail
 
-template <typename T, unsigned int DIM>
-using curtain_rail_index = typename curtain_rail::container<T, DIM>::value_src_iterator;
+
+#endif //CURTAIN_RAIL_H
