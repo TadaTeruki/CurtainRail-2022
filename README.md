@@ -1,6 +1,6 @@
 # CurtainRail
 
-This git repository is the original documentation of **CurtainRail**, includes test implementations.
+This git repository is the original documentation of **CurtainRail**, includes implementation for testing.
 
 
 
@@ -12,7 +12,7 @@ Tree-structure-based KDSs(like R-tree[Antonin Guttman 1984], kd-tree[Jon Louis B
 
 Today, a majority of traditional KDSs which handle spatial objects are based on tree structures.
 
-CurtainRail is proposed as a linear-structure-based(**"non-tree"**) KDS for dealing with above issues of tree-structure-based ones.
+CurtainRail is proposed as a linear-structure-based(**"no-tree"**) KDS for dealing with above issues of tree-structure-based ones.
 This gives an effective and stable method to update structures for handling continuously moving spatial objects, although it cannot  work effectively for direct spatial access like other KDSs. For range searching, this requires **O(ND)** time initially and performs faster when the range moves continuously. If the movement of the search range is small enough, only approximately **O(D)** time is required. <br>(**N**:the number of objects, **D**:the number of dimensions)
 ![Representation](https://user-images.githubusercontent.com/69315285/173576003-20d8f60b-8230-4252-8b70-c779448454f6.png)
 
