@@ -30,6 +30,10 @@ This gives an effective and stable method to update structures for handling cont
 |**expected case(for appropriate uses)**|$$ O(ND) $$|$$ O(ND) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|
 |**worst case**|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|
 
+### Performance comparison
+
+We compared the time performance with **Rtree**. See: https://github.com/TadaTeruki/CurtainRail-2022/blob/documentation/docs/benchmark.md
+
 ### Issues
 
 (preparing)
