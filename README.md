@@ -45,4 +45,7 @@ Antonin Guttman. 1984. R-trees: a dynamic index structure for spatial searching.
 
 Jon Louis Bentley. 1975. Multidimensional binary search trees used for associative searching. Commun. ACM 18, 9 (Sept. 1975), 509–517. https://doi.org/10.1145/361002.361007
 
+# Licence
 
+The experimental implementation is available under the MIT License.
+Copyright (c) 2022 Tada Teruki. All rights reserved.
