@@ -1,7 +1,6 @@
 # CurtainRail
 
-This git repository is the original documentation of **CurtainRail**, includes implementation for testing.
-
+This git repository is the original documentation of **CurtainRail**, includes experimental implementation for testing.
 
 
 ## About CurtainRail
@@ -30,7 +29,6 @@ This gives an effective and stable method to update structures for handling cont
 |**best case**|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|
 |**expected case(for appropriate uses)**|$$ O(ND) $$|$$ O(ND) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|
 |**worst case**|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|
-
 
 ### Issues
 
