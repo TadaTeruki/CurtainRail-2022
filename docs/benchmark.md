@@ -2,14 +2,14 @@
 
 This document describes the difference of time performance for some practical queries between **CurtainRail and Rtree[*]**.
 
-### About R-tree
+### Tools
 
-**R-tree** is one of the most popular spatial indexing methods.
+ - **RTree** by nushoin - https://github.com/nushoin/RTree
+ - **benchmark** by google - https://github.com/google/benchmark
 
 For performance comparison, we used [**RTree**](https://github.com/nushoin/RTree): the open-source implementation originally published in https://superliminal.com/sources/ and revisioned by [nushoin](https://github.com/nushoin).
 
-
-# Results
+And also we used [*benchmark*](https://github.com/google/benchmark) by google for getting and recording results.
 
 ### Environment
 
@@ -19,12 +19,22 @@ For performance comparison, we used [**RTree**](https://github.com/nushoin/RTree
  - OS : Ubuntu 20.04.4 LTS x86_64<br>
     (Kernel: 5.13.0-48-generic)
 
+# Results
+
+For below tasks, **N** 2-dimentional-spatial objects are handled.
+
+
 ### Task 1: Search range movement
 
-N = 10,000
-R = 1,000
+This task is for comparing the performance of continuous range search query for **R** times.<br>
+The space is 1.0x1.0, and the edges of search range can move up to **M** in one loop.
 
-|(movement scale)|CurtainRail|R-tree|Linear search| - no search - |
+(In the situation 'no search', range search is never conducted)
+
+**N** = 10,000
+**R** = 1,000
+
+|**M**|CurtainRail|R-tree|Linear search| - no search - |
 |---|---|---|---|---|
 |$$ 10^-2 $$|48459643 ns|1368302 ns|48517314 ns|48115 ns|
 |$$ 10^-3 $$|5938341 ns|995358 ns|52124821 ns|48669 ns|
@@ -35,12 +45,15 @@ R = 1,000
 |$$ 10^-8 $$|500723 ns|1024334 ns|48654319 ns|49004 ns|
 
 
-### Task 2: Data movement (One data)
+### Task 2: Object movement (One object)
 
-N = 10,000
-R = 1,000
+This task is for comparing the performance of continuous object movement query for **R** times.<br>
+The space is 1.0x1.0, and only one object can move up to **M** in one loop.
 
-|(movement scale)|CurtainRail|R-tree|
+**N** = 10,000
+**R** = 1,000
+
+|**M**|CurtainRail|R-tree|
 |---|---|---|
 |$$ 10^-2 $$|1863242 ns|1776582 ns|
 |$$ 10^-3 $$|790722 ns|1786134 ns|
@@ -51,12 +64,15 @@ R = 1,000
 |$$ 10^-8 $$|496898 ns|1642682 ns|
 
 
-### Task 3: Data movement (All data)
+### Task 3: Object movement (All objects)
 
-N = 10,000
-R = 1,000
+This task is for comparing the performance of continuous object movement query for **R** times.<br>
+The space is 1.0x1.0, and the all objects can move up to **M** in one loop.
 
-|(movement scale)|CurtainRail|R-tree|
+**N** = 10,000
+**R** = 1,000
+
+|**M**|CurtainRail|R-tree|
 |---|---|---|
 |$$ 10^-2 $$|17218336112 ns|33402585971 ns|
 |$$ 10^-3 $$|9484792960 ns|25955768737 ns|
@@ -67,12 +83,17 @@ R = 1,000
 |$$ 10^-8 $$|4667847843 ns|22721168536 ns|
 
 
-### Task 4: Data movement (One data) +  Search range movement
+### Task 4: Object movement (One object) +  Search range movement
 
-N = 10,000
-R = 1,000
+This task is for comparing the performance of continuous object movement query for **R** times.<br>
+The space is 1.0x1.0, and the all objects can move up to **M** in one loop.
 
-|(movement scale)|CurtainRail|R-tree|Linear search| - no search - |
+**N** = 10,000
+**R** = 1,000
+
+(In the situation 'no search', range search is never conducted)
+
+|**M**|CurtainRail|R-tree|Linear search| - no search - |
 |---|---|---|---|---|
 |$$ 10^-2 $$|52784905 ns|3984470 ns|50704342 ns|95891 ns|
 |$$ 10^-3 $$|6701097 ns|2979662 ns|51915613 ns|95778 ns|
@@ -85,16 +106,17 @@ R = 1,000
 
 ### Task 4: Clustering (DBSCAN)
 
-N = 10,000
-Distance = 0.05
+This task is for comparing the performance of DBSCAN clustering.<br>
+The space is 1.0x1.0, and any two objects will be attributed to same class if the distance is less than **DIST**.
+
+**N** = 10,000
+**DIST** = 0.005
 
 |CurtainRail|R-tree|Linear search| 
 |---|---|---|
 |1062963440 ns|5350731 ns|1452299046 ns|
 
 
-___
+### Assessment
 
-### References
-
-[*] Guttman, Antonin. “R-trees: a dynamic index structure for spatial searching.” SIGMOD '84 (1984).
+(preparing)

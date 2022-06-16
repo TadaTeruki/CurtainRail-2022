@@ -1,3 +1,10 @@
+/*
+Copyright (c) 2022 Tada Teruki, All rights reserved.
+
+[ curtain_rail.cpp ]
+The experimental implementation of CurtainRail.
+*/
+
 
 #ifndef CURTAIN_RAIL_H
 #define CURTAIN_RAIL_H
