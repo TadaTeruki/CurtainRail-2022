@@ -20,7 +20,7 @@ This gives an effective and stable method to update structures for handling cont
 
 (preparing)
 
-### Time complexity
+## Time complexity
 
 **N** : the number of objects<br>**D** : the number of dimensions
 
@@ -30,22 +30,23 @@ This gives an effective and stable method to update structures for handling cont
 |**expected case(for appropriate uses)**|$$ O(ND) $$|$$ O(ND) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|
 |**worst case**|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|
 
-### Performance comparison
+## Performance comparison
 
-We compared the time performance with **Rtree**. See: https://github.com/TadaTeruki/CurtainRail-2022/blob/documentation/docs/benchmark.md
+We compared the time performance with **Rtree**. <br>
+See: **https://github.com/TadaTeruki/CurtainRail-2022/blob/documentation/docs/benchmark.md**
 
-### Issues
+## Issues
 
 (preparing)
 
 
-# References
+## References
 
 Antonin Guttman. 1984. R-trees: a dynamic index structure for spatial searching. SIGMOD Rec. 14, 2 (June 1984), 47–57. https://doi.org/10.1145/971697.602266
 
 Jon Louis Bentley. 1975. Multidimensional binary search trees used for associative searching. Commun. ACM 18, 9 (Sept. 1975), 509–517. https://doi.org/10.1145/361002.361007
 
-# Licence
+## Licence
 
-The experimental implementation is available under the MIT License.
+The experimental implementation is available under the MIT License.<br>
 Copyright (c) 2022 Tada Teruki. All rights reserved.
