@@ -18,7 +18,23 @@ This gives an effective and stable method to update structures for handling cont
 
 ### How CurtainRail works
 
-(preparing)
+#### Components
+
+CurtainRail consists of two types of linear data structures.
+
+Firstly, sorted doubly-linked-lists on each dimensions (In this documentation, these will be simply called "**list(s)**".) are used for collecting data. When one data inserted, the value of the coordinates of each dimension is inserted into each list along with the address of the data.
+
+Secondly, hash tables are used for range searching. It maps the address of each data to integer flags (The flag is initially 0, and the usage is described later).
+
+#### Initial range search
+
+CurtainRail initially does range search through below steps.
+
+ 1. Insert the two endpoints of each dimension of the search ranges into the lists.
+ 2. Do sequential search in each dimension and record the results in a hash table. Specifically, find all data between the two endpoints of search range, and increment 1 into the flag corresponding to each data using the hash table. The hash table eventually counts how many dimensions each data has been sequential searched.
+ 3. According to the values in the hash table, extract all data that has been sequential searched in all dimensions.
+
+This sequence of steps will satisfies the query. The time complexity will be **O(ND)**.
 
 ## Time complexity
 
@@ -26,9 +42,9 @@ This gives an effective and stable method to update structures for handling cont
 
 ||Object insertion & deletion|Range search(initial)|Range search(continuous)|Spatial object replacement|
 |---|---|---|---|---|
-|**best case**|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|
-|**expected case(for appropriate uses)**|$$ O(ND) $$|$$ O(ND) $$|$$ O(D) $$|$$ O(D) $$|$$ O(D) $$|
-|**worst case**|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|$$ O(ND) $$|
+|**best case**|$$O(D)$$|$$O(D)$$|$$O(D)$$|$$O(D)$$|$$O(D)$$|
+|**expected case(for appropriate uses)**|$$O(ND)$$|$$O(ND)$$|$$O(D)$$|$$O(D)$$|$$O(D)$$|
+|**worst case**|$$O(ND)$$|$$O(ND)$$|$$O(ND)$$|$$O(ND)$$|$$O(ND)$$|
 
 ## Performance comparison
 
