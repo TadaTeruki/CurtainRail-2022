@@ -32,7 +32,6 @@ CurtainRail consists of two types of linear data structures.
  - Hash tables for range searching<br>
    It maps the address of each data to integer flags (The flag is initially 0, and the usage is described later).
 
-
 <br>
 
 **Figure 2: Data collection using CurtainRail**
@@ -81,7 +80,7 @@ This sequence of steps satisfies the query.
 Representation
 <br><img src="https://user-images.githubusercontent.com/69315285/185815773-b61386e2-0dd0-4968-a8a4-ad603507f590.png" width="50%"/>
 
-The lists
+The lists - Only the flags of the underlined data need to be updated.
 <br><img src="https://user-images.githubusercontent.com/69315285/185816229-a4db4d99-7938-445d-90f2-3f521ba57b2e.png" width="50%"/>
 
 The hash table
