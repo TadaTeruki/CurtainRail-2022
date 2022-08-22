@@ -101,6 +101,11 @@ The hash table
 We compared the time performance with **Rtree**. <br>
 See: **https://github.com/TadaTeruki/CurtainRail-2022/blob/documentation/docs/benchmark.md**
 
+## Papers
+
+No papers about CurtainRail were published yet.
+
+The first will be proposed through FIT: the confecence of informatics in Japan in 2022.
 
 ## References
 
