@@ -16,7 +16,7 @@ This gives an effective and stable method to update structures for handling cont
 
 <br>
 
-**Figure: Representation of CurtainRail**
+**Figure 1: Representation of CurtainRail**
 <br><img src="https://user-images.githubusercontent.com/69315285/173576003-20d8f60b-8230-4252-8b70-c779448454f6.png" width="70%"/>
 
 
@@ -33,7 +33,14 @@ CurtainRail consists of two types of linear data structures.
    It maps the address of each data to integer flags (The flag is initially 0, and the usage is described later).
 
 
+<br>
+
+**Figure 2: Data collection using CurtainRail**
+
+Representation
 <br><img src="https://user-images.githubusercontent.com/69315285/185815728-92f98e92-f5d9-4a7c-9676-b0bed6c64184.png" width="50%"/>
+
+The hash table
 <br><img src="https://user-images.githubusercontent.com/69315285/185816140-67ca72b6-7c92-4edd-b3cb-982e4322c177.png" width="50%"/>
 
 
@@ -47,8 +54,17 @@ CurtainRail initially does range search through below steps.
 
 This sequence of steps will satisfies the query. The time complexity will be **O(ND)**.
 
+<br>
+
+**Figure 3: Range search using CurtainRail**
+
+Representation
 <br><img src="https://user-images.githubusercontent.com/69315285/185815767-fa29f293-af39-4d7b-8c4e-f8c7b6db759a.png" width="50%"/>
+
+The lists
 <br><img src="https://user-images.githubusercontent.com/69315285/185816269-eeab38cc-a2e9-4353-a623-e89598ad652a.png" width="50%"/>
+
+The hash table
 <br><img src="https://user-images.githubusercontent.com/69315285/185816215-7f1fdfbd-4ff5-4b4a-92e7-e18d685471df.png" width="50%"/>
 
 ### Range search(continuous)
@@ -62,8 +78,13 @@ After range searching through above steps, the result can be refered whenever fr
 
 This sequence of steps satisfies the query.
 
+Representation
 <br><img src="https://user-images.githubusercontent.com/69315285/185815773-b61386e2-0dd0-4968-a8a4-ad603507f590.png" width="50%"/>
+
+The lists
 <br><img src="https://user-images.githubusercontent.com/69315285/185816229-a4db4d99-7938-445d-90f2-3f521ba57b2e.png" width="50%"/>
+
+The hash table
 <br><img src="https://user-images.githubusercontent.com/69315285/185816231-dd5878ec-2049-4de6-810f-7e8979b38459.png" width="50%"/>
 
 ## Time complexity
